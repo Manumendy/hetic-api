@@ -36,18 +36,7 @@ jobs:
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
 
-      ############# MODEL ###############
 
-      - uses: docker-practice/actions-setup-docker@master
-      - run: |
-          set -x
-          docker version
-          model_commit_id=${{ github.event.client_payload.model_commit_id || 'latest' }}
-          container_id=$(docker create Manumendy/hetic-api:$model_commit_id)
-          docker cp "$container_id:/data/model.json" .
-          echo "Extracting model version $model_commit_id"
-          pwd
-          ls -l .
 
       ########### DOCKER ##################
       
