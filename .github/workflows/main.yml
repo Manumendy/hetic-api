@@ -45,7 +45,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: .
           # Note: tags has to be all lower-case
-          tags: emmanuelmendy/hetic-data:latest,emmanuelmendy/hetic-data:${{ steps.vars.outputs.sha_short }}
+          tags: emmanuelmendy/hetic-api:latest,emmanuelmendy/hetic-api:${{ steps.vars.outputs.sha_short }}
           # build on feature branches, push only on main branch
           push: true # ${{ github.ref == 'refs/heads/main' }}
 
