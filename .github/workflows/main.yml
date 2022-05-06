@@ -43,7 +43,7 @@ jobs:
           set -x
           docker version
           model_commit_id=${{ github.event.client_payload.model_commit_id || 'latest' }}
-          container_id=$(docker create Manumendy/hetic-api:$model_commit_id)
+          container_id=$(docker create emmanuelmendy/hetic-api:$model_commit_id)
           docker cp "$container_id:/data/model.json" .
           echo "Extracting model version $model_commit_id"
           pwd
